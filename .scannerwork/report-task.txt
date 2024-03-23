@@ -1,0 +1,6 @@
+projectKey=PruebaProyectoSonarQube5
+serverUrl=http://localhost:9000
+serverVersion=10.4.1.88267
+dashboardUrl=http://localhost:9000/dashboard?id=PruebaProyectoSonarQube5
+ceTaskId=018c1daa-afca-444e-bc39-cb0a334c2248
+ceTaskUrl=http://localhost:9000/api/ce/task?id=018c1daa-afca-444e-bc39-cb0a334c2248
