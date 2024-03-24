@@ -80,7 +80,9 @@ describe('gameCoordinator', () => {
         //llama al metodo start de soundManager.js  Resumes the ambience
       }
 
-      stopAmbience() {}
+      stopAmbience() {
+        //llama al metodo start de soundManager.js  Stops the ambience
+      }
     };
 
     global.document = {
