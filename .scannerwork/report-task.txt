@@ -2,5 +2,5 @@ projectKey=PacmanJS
 serverUrl=http://localhost:9000
 serverVersion=10.4.1.88267
 dashboardUrl=http://localhost:9000/dashboard?id=PacmanJS
-ceTaskId=8bb4c57d-5463-4295-9885-f1d01d7c8b0a
-ceTaskUrl=http://localhost:9000/api/ce/task?id=8bb4c57d-5463-4295-9885-f1d01d7c8b0a
+ceTaskId=82ab2ead-35e4-4c1a-beec-ce53df80ccb6
+ceTaskUrl=http://localhost:9000/api/ce/task?id=82ab2ead-35e4-4c1a-beec-ce53df80ccb6
