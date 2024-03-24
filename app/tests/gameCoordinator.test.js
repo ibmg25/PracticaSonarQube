@@ -72,9 +72,13 @@ describe('gameCoordinator', () => {
         //llama al metodo start de soundManager.js  Sets the ambience for the game
       }
 
-      playDotSound() {}
+      playDotSound() {
+        //llama al metodo start de soundManager.js  Special method for eating dots. The dots should alternate between two sound effects, but not too quickly
+      }
 
-      resumeAmbience() {}
+      resumeAmbience() {
+        //llama al metodo start de soundManager.js  Resumes the ambience
+      }
 
       stopAmbience() {}
     };
