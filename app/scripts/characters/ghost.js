@@ -834,7 +834,7 @@ class Ghost {
     this.oldPosition = { ...this.position};
 
     if (this.moving) {
-      this.position = this.handleMovement(elapsedMs);git
+      this.position = this.handleMovement(elapsedMs);
       this.setSpriteSheet(this.name, this.direction, this.mode);
       this.msSinceLastSprite += elapsedMs;
     }
