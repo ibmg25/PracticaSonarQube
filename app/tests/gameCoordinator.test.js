@@ -68,7 +68,9 @@ describe('gameCoordinator', () => {
         //llama al metodo start de soundManager.js  Plays a single sound effect
       }
 
-      setAmbience() {}
+      setAmbience() {
+        //llama al metodo start de soundManager.js  Sets the ambience for the game
+      }
 
       playDotSound() {}
 
