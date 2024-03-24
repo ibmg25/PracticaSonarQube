@@ -1037,7 +1037,9 @@ class Pacman {
       this.direction = this.desiredDirection;
       this.setSpriteSheet(this.direction);
       return desired.newPosition;
-    } if (this.characterUtil.changingGridPosition(
+    } 
+    
+    if (this.characterUtil.changingGridPosition(
       gridPosition, alternate.newGridPosition,
     )) {
       return this.characterUtil.snapToGrid(
