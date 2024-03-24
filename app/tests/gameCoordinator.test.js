@@ -50,7 +50,9 @@ describe('gameCoordinator', () => {
       }
     };
     global.GameEngine = class {
-      start() { }
+      start() { 
+        //llama al metodo start de gameCoordinator.js Starts the game
+      }
     };
 
     global.SoundManager = class {
