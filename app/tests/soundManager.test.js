@@ -6,7 +6,6 @@ let comp;
 
 describe('soundManager', () => {
   beforeEach(() => {
-    global.Audio = class {};
     const AudioContext = class { };
     global.window = {
       AudioContext,

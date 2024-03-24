@@ -114,7 +114,6 @@ describe('gameCoordinator', () => {
       setItem: () => { },
     };
     global.Image = class {};
-    global.Audio = class {};
 
     clock = sinon.useFakeTimers();
     comp = new GameCoordinator();
