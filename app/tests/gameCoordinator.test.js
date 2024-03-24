@@ -14,25 +14,25 @@ describe('gameCoordinator', () => {
   beforeEach(() => {
     global.Pacman = class {
       reset() {
-          //llama al metodo reset de gameCoordinator.js Resets gameCoordinator values to their default states
+          //call  reset de gameCoordinator.js Resets gameCoordinator values to their default states
       }
     };
     global.CharacterUtil = class {};
     global.Ghost = class {
       reset() {
-         //llama al metodo reset de gameCoordinator.js Resets gameCoordinator values to their default states
+         //call  reset de gameCoordinator.js Resets gameCoordinator values to their default states
       }
 
       changeMode() {
-        //* llama al metodo reset de gameCoordinator.js Changes the defaultMode to chase or scatter, and turns the ghost around
+        //* call  reset de gameCoordinator.js Changes the defaultMode to chase or scatter, and turns the ghost around
       }
 
       endIdleMode() {
-        //* llama al metodo reset de gameCoordinator.js Changes the defaultMode to chase or scatter, and turns the ghost around
+        //* call  reset de gameCoordinator.js Changes the defaultMode to chase or scatter, and turns the ghost around
       }
 
       pause() {
-        //* llama al metodo reset de gameCoordinator.js Changes the defaultMode to chase or scatter, and turns the ghost around
+        //* call  reset de gameCoordinator.js Changes the defaultMode to chase or scatter, and turns the ghost around
       }
     };
     global.Pickup = class {
@@ -41,7 +41,7 @@ describe('gameCoordinator', () => {
       }
 
       reset() {
-         //llama al metodo reset de gameCoordinator.js Resets gameCoordinator values to their default states
+         //call  reset de gameCoordinator.js Resets gameCoordinator values to their default states
       }
     };
     global.Timer = class {
@@ -51,37 +51,37 @@ describe('gameCoordinator', () => {
     };
     global.GameEngine = class {
       start() { 
-        //llama al metodo start de gameCoordinator.js Starts the game
+        //call  start de gameCoordinator.js Starts the game
       }
     };
 
     global.SoundManager = class {
       setCutscene() {
-        //llama al metodo start de soundManager.js  Sets the cutscene flag to determine if players should be able to resume ambience
+        //call  start de soundManager.js  Sets the cutscene flag to determine if players should be able to resume ambience
       }
 
       setMasterVolume() {
-        //llama al metodo start de soundManager.js  Sets the master volume for all sounds
+        //call  start de soundManager.js  Sets the master volume for all sounds
       }
 
       play() {
-        //llama al metodo start de soundManager.js  Plays a single sound effect
+        //call  start de soundManager.js  Plays a single sound effect
       }
 
       setAmbience() {
-        //llama al metodo start de soundManager.js  Sets the ambience for the game
+        //call  start de soundManager.js  Sets the ambience for the game
       }
 
       playDotSound() {
-        //llama al metodo start de soundManager.js  Special method for eating dots. The dots should alternate between two sound effects, but not too quickly
+        //call  start de soundManager.js  Special method for eating dots. The dots should alternate between two sound effects, but not too quickly
       }
 
       resumeAmbience() {
-        //llama al metodo start de soundManager.js  Resumes the ambience
+        //call  start de soundManager.js  Resumes the ambience
       }
 
       stopAmbience() {
-        //llama al metodo start de soundManager.js  Stops the ambience
+        //call  start de soundManager.js  Stops the ambience
       }
     };
 
