@@ -17,7 +17,9 @@ describe('gameCoordinator', () => {
           //call  reset de gameCoordinator.js Resets gameCoordinator values to their default states
       }
     };
-    global.CharacterUtil = class {};
+    global.CharacterUtil = class {
+      ///...
+    };
     global.Ghost = class {
       reset() {
          //call  reset de gameCoordinator.js Resets gameCoordinator values to their default states

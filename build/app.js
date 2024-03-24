@@ -155,8 +155,8 @@ class Ghost {
         };
         break;
     }
-    this.position = Object.assign({}, this.defaultPosition);
-    this.oldPosition = Object.assign({}, this.position);
+    this.position = {... this.defaultPosition};
+    this.oldPosition = {... this.position};
     this.animationTarget.style.top = `${this.position.top}px`;
     this.animationTarget.style.left = `${this.position.left}px`;
   }
@@ -278,7 +278,7 @@ class Ghost {
    * @param {number} spaces
    */
   getPositionInFrontOfPacman(pacmanGridPosition, spaces) {
-    const target = Object.assign({}, pacmanGridPosition);
+    const target = {...pacmanGridPosition};
     const pacDirection = this.pacman.direction;
     const propToChange = (pacDirection === 'up' || pacDirection === 'down')
       ? 'y' : 'x';
@@ -454,7 +454,7 @@ class Ghost {
    * @returns {({ top: number, left: number})}
    */
   handleIdleMovement(elapsedMs, position, velocity) {
-    const newPosition = Object.assign({}, this.position);
+    const newPosition = {...this.position};
 
     if (position.y <= 13.5) {
       this.direction = this.characterUtil.directions.down;
@@ -501,7 +501,7 @@ class Ghost {
    * @returns {({ top: number, left: number})}
    */
   handleSnappedMovement(elapsedMs, gridPosition, velocity, pacmanGridPosition) {
-    const newPosition = Object.assign({}, this.position);
+    const newPosition = {... this.position};
 
     this.direction = this.determineDirection(
       this.name, gridPosition, pacmanGridPosition, this.direction,
@@ -561,7 +561,7 @@ class Ghost {
    * @returns {({x: number, y: number})}
    */
   handleGhostHouse(gridPosition) {
-    const gridPositionCopy = Object.assign({}, gridPosition);
+    const gridPositionCopy = {... gridPosition};
 
     if (this.enteringGhostHouse(this.mode, gridPosition)) {
       this.direction = this.characterUtil.directions.down;
@@ -831,7 +831,7 @@ class Ghost {
    * @param {number} elapsedMs - The amount of MS that have passed since the last update
    */
   update(elapsedMs) {
-    this.oldPosition = Object.assign({}, this.position);
+    this.oldPosition = {...this.position};
 
     if (this.moving) {
       this.position = this.handleMovement(elapsedMs);
@@ -920,8 +920,8 @@ class Pacman {
       top: scaledTileSize * 22.5,
       left: scaledTileSize * 13,
     };
-    this.position = Object.assign({}, this.defaultPosition);
-    this.oldPosition = Object.assign({}, this.position);
+    this.position = {... this.defaultPosition};
+    this.oldPosition = {... this.position};
     this.animationTarget.style.top = `${this.position.top}px`;
     this.animationTarget.style.left = `${this.position.left}px`;
   }
@@ -1081,7 +1081,7 @@ class Pacman {
    * @param {number} elapsedMs - The amount of MS that have passed since the last update
    */
   update(elapsedMs) {
-    this.oldPosition = Object.assign({}, this.position);
+    this.oldPosition = {...this.position};
 
     if (this.moving) {
       const gridPosition = this.characterUtil.determineGridPosition(
@@ -2648,7 +2648,7 @@ class Pickup {
    * @param {({ x: number, y: number, size: number})} originalPacman
    */
   checkForCollision(pickup, originalPacman) {
-    const pacman = Object.assign({}, originalPacman);
+    const pacman = {... originalPacman};
 
     pacman.x += (pacman.size * 0.25);
     pacman.y += (pacman.size * 0.25);
@@ -2907,7 +2907,7 @@ class CharacterUtil {
   determineNewPositions(
     position, direction, velocityPerMs, elapsedMs, scaledTileSize,
   ) {
-    const newPosition = Object.assign({}, position);
+    const newPosition = {... position};
     newPosition[this.getPropertyToChange(direction)]
       += this.getVelocity(direction, velocityPerMs) * elapsedMs;
     const newGridPosition = this.determineGridPosition(
@@ -2928,7 +2928,7 @@ class CharacterUtil {
    * @returns {({top: number, left: number})}
    */
   snapToGrid(position, direction, scaledTileSize) {
-    const newPosition = Object.assign({}, position);
+    const newPosition = {... position};
     const roundingFunction = this.determineRoundingFunction(
       direction, this.directions,
     );
@@ -2957,7 +2957,7 @@ class CharacterUtil {
    * @returns {({top: number, left: number})}
    */
   handleWarp(position, scaledTileSize, mazeArray) {
-    const newPosition = Object.assign({}, position);
+    const newPosition = {...position};
     const gridPosition = this.determineGridPosition(position, scaledTileSize);
 
     if (gridPosition.x < -0.75) {
