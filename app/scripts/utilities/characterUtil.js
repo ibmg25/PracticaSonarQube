@@ -176,7 +176,7 @@ class CharacterUtil {
   determineNewPositions(
     position, direction, velocityPerMs, elapsedMs, scaledTileSize,
   ) {
-    const newPosition = Object.assign({}, position);
+    const newPosition = {... position};
     newPosition[this.getPropertyToChange(direction)]
       += this.getVelocity(direction, velocityPerMs) * elapsedMs;
     const newGridPosition = this.determineGridPosition(
