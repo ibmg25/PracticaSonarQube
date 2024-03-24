@@ -64,7 +64,9 @@ describe('gameCoordinator', () => {
         //llama al metodo start de soundManager.js  Sets the master volume for all sounds
       }
 
-      play() {}
+      play() {
+        //llama al metodo start de soundManager.js  Plays a single sound effect
+      }
 
       setAmbience() {}
 
