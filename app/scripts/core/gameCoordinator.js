@@ -392,7 +392,7 @@ class GameCoordinator {
   /**
    * Resets gameCoordinator values to their default states
    */
-  reset() {
+  reset(a) {
     this.activeTimers = [];
     this.points = 0;
     this.level = 1;

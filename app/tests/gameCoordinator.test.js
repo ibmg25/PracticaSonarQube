@@ -13,11 +13,15 @@ let clock;
 describe('gameCoordinator', () => {
   beforeEach(() => {
     global.Pacman = class {
-      reset() {}
+      reset() {
+          //llama al metodo reset de gameCoordinator.js Resets gameCoordinator values to their default states
+      }
     };
     global.CharacterUtil = class {};
     global.Ghost = class {
-      reset() {}
+      reset() {
+         //llama al metodo reset de gameCoordinator.js Resets gameCoordinator values to their default states
+      }
 
       changeMode() {}
 
@@ -30,7 +34,9 @@ describe('gameCoordinator', () => {
         this.type = type;
       }
 
-      reset() {}
+      reset() {
+         //llama al metodo reset de gameCoordinator.js Resets gameCoordinator values to their default states
+      }
     };
     global.Timer = class {
       constructor(callback, delay) {
