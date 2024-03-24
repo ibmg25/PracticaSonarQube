@@ -31,7 +31,9 @@ describe('gameCoordinator', () => {
         //* llama al metodo reset de gameCoordinator.js Changes the defaultMode to chase or scatter, and turns the ghost around
       }
 
-      pause() {}
+      pause() {
+        //* llama al metodo reset de gameCoordinator.js Changes the defaultMode to chase or scatter, and turns the ghost around
+      }
     };
     global.Pickup = class {
       constructor(type) {
