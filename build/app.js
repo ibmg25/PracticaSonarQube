@@ -221,7 +221,7 @@ class Ghost {
   getTile(mazeArray, y, x) {
     let tile = false;
 
-    if (mazeArray?.[y]?.[x] !== 'X') {
+    if (mazeArray[y] && mazeArray[y][x] && mazeArray[y][x] !== 'X') {
       tile = {
         x,
         y,
@@ -2333,8 +2333,7 @@ class GameCoordinator {
    */
   timerExists(e) {
     return !!(e?.detail?.timer?.timerId);
-}
-
+  }
 
   /**
    * Pauses a timer
