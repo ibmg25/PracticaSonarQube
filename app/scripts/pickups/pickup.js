@@ -118,7 +118,7 @@ class Pickup {
    * @param {({ x: number, y: number, size: number})} originalPacman
    */
   checkForCollision(pickup, originalPacman) {
-    const pacman = Object.assign({}, originalPacman);
+    const pacman = {... originalPacman} ;
 
     pacman.x += (pacman.size * 0.25);
     pacman.y += (pacman.size * 0.25);

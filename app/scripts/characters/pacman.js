@@ -76,8 +76,8 @@ class Pacman {
       top: scaledTileSize * 22.5,
       left: scaledTileSize * 13,
     };
-    this.position = Object.assign({}, this.defaultPosition);
-    this.oldPosition = Object.assign({}, this.position);
+    this.position = {... this.defaultPosition};
+    this.oldPosition = {... this.position};
     this.animationTarget.style.top = `${this.position.top}px`;
     this.animationTarget.style.left = `${this.position.left}px`;
   }
@@ -237,7 +237,7 @@ class Pacman {
    * @param {number} elapsedMs - The amount of MS that have passed since the last update
    */
   update(elapsedMs) {
-    this.oldPosition = Object.assign({}, this.position);
+    this.oldPosition = {... this.position};
 
     if (this.moving) {
       const gridPosition = this.characterUtil.determineGridPosition(
