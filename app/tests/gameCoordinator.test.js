@@ -56,7 +56,9 @@ describe('gameCoordinator', () => {
     };
 
     global.SoundManager = class {
-      setCutscene() {}
+      setCutscene() {
+        //llama al metodo start de soundManager.js  Sets the cutscene flag to determine if players should be able to resume ambience
+      }
 
       setMasterVolume() {}
 
