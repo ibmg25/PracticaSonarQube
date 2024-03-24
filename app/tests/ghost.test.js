@@ -461,15 +461,12 @@ describe('ghost', () => {
       assert.deepEqual(result, pacmanPos);
 
       comp.determinePinkyTarget = sinon.fake();
-      result = comp.getTarget('pinky', undefined, pacmanPos, 'chase');
       assert(comp.determinePinkyTarget.calledWith(pacmanPos));
 
       comp.determineInkyTarget = sinon.fake();
-      result = comp.getTarget('inky', undefined, pacmanPos, 'chase');
       assert(comp.determineInkyTarget.calledWith(pacmanPos));
 
       comp.determineClydeTarget = sinon.fake();
-      result = comp.getTarget('clyde', { x: 1, y: 1 }, pacmanPos, 'chase');
       assert(comp.determineClydeTarget.calledWith({ x: 1, y: 1 }, pacmanPos));
 
       result = comp.getTarget(undefined, undefined, pacmanPos, 'chase');
