@@ -197,7 +197,7 @@ class CharacterUtil {
    * @returns {({top: number, left: number})}
    */
   snapToGrid(position, direction, scaledTileSize) {
-    const newPosition = Object.assign({}, position);
+    const newPosition = {... position};
     const roundingFunction = this.determineRoundingFunction(
       direction, this.directions,
     );
@@ -226,7 +226,7 @@ class CharacterUtil {
    * @returns {({top: number, left: number})}
    */
   handleWarp(position, scaledTileSize, mazeArray) {
-    const newPosition = Object.assign({}, position);
+    const newPosition = {...position};
     const gridPosition = this.determineGridPosition(position, scaledTileSize);
 
     if (gridPosition.x < -0.75) {
