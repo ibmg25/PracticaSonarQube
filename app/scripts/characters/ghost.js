@@ -155,8 +155,8 @@ class Ghost {
         };
         break;
     }
-    this.position = Object.assign({}, this.defaultPosition);
-    this.oldPosition = Object.assign({}, this.position);
+    this.position = { ...this.defaultPosition };
+    this.oldPosition ={ ...this.position};
     this.animationTarget.style.top = `${this.position.top}px`;
     this.animationTarget.style.left = `${this.position.left}px`;
   }
@@ -278,7 +278,7 @@ class Ghost {
    * @param {number} spaces
    */
   getPositionInFrontOfPacman(pacmanGridPosition, spaces) {
-    const target = Object.assign({}, pacmanGridPosition);
+    const target = { ... pacmanGridPosition};
     const pacDirection = this.pacman.direction;
     const propToChange = (pacDirection === 'up' || pacDirection === 'down')
       ? 'y' : 'x';
@@ -454,7 +454,7 @@ class Ghost {
    * @returns {({ top: number, left: number})}
    */
   handleIdleMovement(elapsedMs, position, velocity) {
-    const newPosition = Object.assign({}, this.position);
+    const newPosition = {...this.position};
 
     if (position.y <= 13.5) {
       this.direction = this.characterUtil.directions.down;
@@ -501,7 +501,7 @@ class Ghost {
    * @returns {({ top: number, left: number})}
    */
   handleSnappedMovement(elapsedMs, gridPosition, velocity, pacmanGridPosition) {
-    const newPosition = Object.assign({}, this.position);
+    const newPosition = {...this.position};
 
     this.direction = this.determineDirection(
       this.name, gridPosition, pacmanGridPosition, this.direction,
@@ -561,7 +561,7 @@ class Ghost {
    * @returns {({x: number, y: number})}
    */
   handleGhostHouse(gridPosition) {
-    const gridPositionCopy = Object.assign({}, gridPosition);
+    const gridPositionCopy = {...gridPosition};
 
     if (this.enteringGhostHouse(this.mode, gridPosition)) {
       this.direction = this.characterUtil.directions.down;
@@ -831,10 +831,10 @@ class Ghost {
    * @param {number} elapsedMs - The amount of MS that have passed since the last update
    */
   update(elapsedMs) {
-    this.oldPosition = Object.assign({}, this.position);
+    this.oldPosition = { ...this.position};
 
     if (this.moving) {
-      this.position = this.handleMovement(elapsedMs);
+      this.position = this.handleMovement(elapsedMs);git
       this.setSpriteSheet(this.name, this.direction, this.mode);
       this.msSinceLastSprite += elapsedMs;
     }
