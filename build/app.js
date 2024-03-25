@@ -221,7 +221,7 @@ class Ghost {
   getTile(mazeArray, y, x) {
     let tile = false;
 
-    if (mazeArray[y] && mazeArray[y][x] && mazeArray[y][x] !== 'X') {
+    if (mazeArray[y][x] && mazeArray[y]?.[x] !== 'X') {
       tile = {
         x,
         y,
