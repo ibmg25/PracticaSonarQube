@@ -1220,7 +1220,7 @@ class GameCoordinator {
    * @returns {Boolean}
    */
   timerExists(e) {
-    return !!(e.detail.timer || {}).timerId;
+    return !!(e.detail?.timer?.timerId);
   }
 
   /**
