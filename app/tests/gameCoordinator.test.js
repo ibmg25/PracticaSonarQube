@@ -17,9 +17,6 @@ describe('gameCoordinator', () => {
           //call  reset de gameCoordinator.js Resets gameCoordinator values to their default states
       }
     };
-    global.CharacterUtil = class {
-      ///...
-    };
     global.Ghost = class {
       reset() {
          //call  reset de gameCoordinator.js Resets gameCoordinator values to their default states
@@ -115,7 +112,6 @@ describe('gameCoordinator', () => {
       getItem: () => { },
       setItem: () => { },
     };
-    global.Image = class {};
 
     clock = sinon.useFakeTimers();
     comp = new GameCoordinator();
@@ -284,7 +280,6 @@ describe('gameCoordinator', () => {
     it('calls necessary setup functions to start the game', () => {
       comp.registerEventListeners = sinon.fake();
       comp.collisionDetectionLoop = sinon.fake();
-      global.SoundManager = class { };
 
       comp.init();
       assert(comp.registerEventListeners.called);
@@ -1120,7 +1115,6 @@ describe('gameCoordinator', () => {
       comp.scaredGhosts = [ghost];
       comp.determineComboPoints = sinon.fake();
       global.window.dispatchEvent = sinon.fake();
-      global.CustomEvent = class { };
 
       comp.eatGhost(e);
       assert(!comp.allowPacmanMovement);

@@ -6,7 +6,6 @@ let comp;
 
 describe('soundManager', () => {
   beforeEach(() => {
-    const AudioContext = class { };
     global.window = {
       AudioContext,
     };
@@ -17,7 +16,6 @@ describe('soundManager', () => {
   describe('constructor', () => {
     it('uses webkitAudioContext if needed', () => {
       global.window.AudioContext = undefined;
-      global.window.webkitAudioContext = class { };
 
       const testComp = new SoundManager();
       assert.notEqual(testComp.ambience, undefined);
