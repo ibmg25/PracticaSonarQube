@@ -972,6 +972,32 @@ class GameCoordinator {
   /**
    * Resets the gameboard and prepares the next level
    */
+
+  create_final_timer(){
+    new Timer(() => {
+      this.mazeCover.style.visibility = 'hidden';
+      this.level += 1;
+      this.allowKeyPresses = true;
+      this.entityList.forEach((entity) => {
+        const entityRef = entity;
+        if (entityRef.level) {
+          entityRef.level = this.level;
+        }
+        entityRef.reset();
+        if (entityRef instanceof Ghost) {
+          entityRef.resetDefaultSpeed();
+        }
+        if (
+          entityRef instanceof Pickup
+          && entityRef.type !== 'fruit'
+        ) {
+          this.remainingDots += 1;
+        }
+      });
+      this.startGameplay();
+    }, 500);
+  }
+
   advanceLevel() {
     this.allowPause = false;
     this.cutscene = true;
@@ -1010,28 +1036,7 @@ class GameCoordinator {
                 this.mazeImg.src = `${imgBase}maze_blue.svg`;
                 new Timer(() => {
                   this.mazeCover.style.visibility = 'visible';
-                  new Timer(() => {
-                    this.mazeCover.style.visibility = 'hidden';
-                    this.level += 1;
-                    this.allowKeyPresses = true;
-                    this.entityList.forEach((entity) => {
-                      const entityRef = entity;
-                      if (entityRef.level) {
-                        entityRef.level = this.level;
-                      }
-                      entityRef.reset();
-                      if (entityRef instanceof Ghost) {
-                        entityRef.resetDefaultSpeed();
-                      }
-                      if (
-                        entityRef instanceof Pickup
-                        && entityRef.type !== 'fruit'
-                      ) {
-                        this.remainingDots += 1;
-                      }
-                    });
-                    this.startGameplay();
-                  }, 500);
+                  create_final_timer();
                 }, 250);
               }, 250);
             }, 250);
