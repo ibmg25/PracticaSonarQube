@@ -2084,6 +2084,28 @@ class GameCoordinator {
   /**
    * Resets the gameboard and prepares the next level
    */
+
+  evaluate_level(entityRef){
+    if (entityRef.level) {
+      entityRef.level = this.level;
+    }
+  }
+
+  isInstanceOfGhost(entityRef){
+    if (entityRef instanceof Ghost) {
+      entityRef.resetDefaultSpeed();
+    }
+  }
+
+  isInstanceOfPickup(entityRef){
+    if (
+      entityRef instanceof Pickup
+      && entityRef.type !== 'fruit'
+    ) {
+      this.remainingDots += 1;
+    }
+  }
+
   advanceLevel() {
     this.allowPause = false;
     this.cutscene = true;
@@ -2128,19 +2150,10 @@ class GameCoordinator {
                     this.allowKeyPresses = true;
                     this.entityList.forEach((entity) => {
                       const entityRef = entity;
-                      if (entityRef.level) {
-                        entityRef.level = this.level;
-                      }
+                      this.evaluate_level(entityRef);
                       entityRef.reset();
-                      if (entityRef instanceof Ghost) {
-                        entityRef.resetDefaultSpeed();
-                      }
-                      if (
-                        entityRef instanceof Pickup
-                        && entityRef.type !== 'fruit'
-                      ) {
-                        this.remainingDots += 1;
-                      }
+                      this.isInstanceOfGhost(entityRef);
+                      this.isInstanceOfPickup(entityRef);
                     });
                     this.startGameplay();
                   }, 500);
