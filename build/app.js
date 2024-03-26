@@ -379,7 +379,7 @@ class Ghost {
       case 'clyde':
         return this.determineClydeTarget(gridPosition, pacmanGridPosition);
       default:
-        // TODO: Other ghosts
+       // TODO: Handle targeting for other ghosts
         return pacmanGridPosition;
     }
   }
